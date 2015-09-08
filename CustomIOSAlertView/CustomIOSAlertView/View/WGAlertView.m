@@ -160,14 +160,15 @@ CGFloat buttonSpacerHeight = 0;
 
     // This is the dialog's container; we attach the custom content and the buttons to this one
     UIView *dialogContainer = [[UIView alloc] initWithFrame:CGRectMake((screenSize.width - dialogSize.width) / 2, (screenSize.height - dialogSize.height) / 2, dialogSize.width, dialogSize.height)];
+    dialogContainer.clipsToBounds = YES;
 
     // First, we style the dialog to match the iOS7 UIAlertView >>>
     CAGradientLayer *gradient = [CAGradientLayer layer];
     gradient.frame = dialogContainer.bounds;
     gradient.colors = [NSArray arrayWithObjects:
-                       (id)[[UIColor colorWithRed:218.0/255.0 green:218.0/255.0 blue:218.0/255.0 alpha:1.0f] CGColor],
-                       (id)[[UIColor colorWithRed:233.0/255.0 green:233.0/255.0 blue:233.0/255.0 alpha:1.0f] CGColor],
-                       (id)[[UIColor colorWithRed:218.0/255.0 green:218.0/255.0 blue:218.0/255.0 alpha:1.0f] CGColor],
+                       (id)[[UIColor colorWithRed:255.0/255.0 green:255.0/255.0 blue:255.0/255.0 alpha:1.0f] CGColor],
+                       (id)[[UIColor colorWithRed:250.0/255.0 green:250.0/255.0 blue:250.0/255.0 alpha:1.0f] CGColor],
+                       (id)[[UIColor colorWithRed:245.0/255.0 green:245.0/255.0 blue:245.0/255.0 alpha:1.0f] CGColor],
                        nil];
 
     CGFloat cornerRadius = kCustomIOSAlertViewCornerRadius;

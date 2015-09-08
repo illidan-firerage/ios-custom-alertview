@@ -72,11 +72,11 @@
 
 - (UIView *)createDemoView
 {
-    UIView *demoView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 290, 200)];
+    UIView *demoView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 290, 60)];
 
-    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 10, 270, 180)];
-    [imageView setImage:[UIImage imageNamed:@"demo"]];
-    [demoView addSubview:imageView];
+//    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 10, 270, 180)];
+//    [imageView setImage:[UIImage imageNamed:@"demo"]];
+//    [demoView addSubview:imageView];
 
     return demoView;
 }
