@@ -10,6 +10,7 @@
 //
 
 #import "ViewController.h"
+#import "WGAlertView.h"
 
 @interface ViewController ()
 
@@ -39,18 +40,18 @@
 - (IBAction)launchDialog:(id)sender
 {
     // Here we need to pass a full frame
-    CustomIOSAlertView *alertView = [[CustomIOSAlertView alloc] init];
+    WGAlertView *alertView = [[WGAlertView alloc] init];
+    
+    alertView.useMotionEffects = YES;
 
     // Add some custom content to the alert view
     [alertView setContainerView:[self createDemoView]];
 
     // Modify the parameters
     [alertView setButtonTitles:[NSMutableArray arrayWithObjects:@"Close1", @"Close2", @"Close3", nil]];
-    [alertView setDelegate:self];
     
-    // You may use a Block, rather than a delegate.
-    [alertView setOnButtonTouchUpInside:^(CustomIOSAlertView *alertView, int buttonIndex) {
-        NSLog(@"Block: Button at position %d is clicked on alertView %d.", buttonIndex, (int)[alertView tag]);
+    // You may use a Block.
+    [alertView setButtonTouchUpInsideBlock:^(WGAlertView *alertView, NSInteger buttonIndex) {
         [alertView close];
     }];
     
@@ -60,7 +61,7 @@
     [alertView show];
 }
 
-- (void)customIOS7dialogButtonTouchUpInside: (CustomIOSAlertView *)alertView clickedButtonAtIndex: (NSInteger)buttonIndex
+- (void)customIOS7dialogButtonTouchUpInside: (WGAlertView *)alertView clickedButtonAtIndex: (NSInteger)buttonIndex
 {
     NSLog(@"Delegate: Button at position %d is clicked on alertView %d.", (int)buttonIndex, (int)[alertView tag]);
     [alertView close];
