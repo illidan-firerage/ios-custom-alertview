@@ -28,7 +28,7 @@ CGFloat buttonSpacerHeight = 0;
     if (self) {
         self.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
 
-        self.buttonTitles = @[@"Close"];
+        self.buttonItems = @[[WGAlertViewButtonItem buttonItemWithNormalTitle:@"Close" normalTitleColor:[UIColor blackColor]]];
         
         [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
 
@@ -201,11 +201,11 @@ CGFloat buttonSpacerHeight = 0;
 // Helper function: add buttons to container
 - (void)addButtonsToView: (UIView *)container
 {
-    if (self.buttonTitles==NULL) { return; }
+    if (self.buttonItems==NULL) { return; }
 
-    CGFloat buttonWidth = container.bounds.size.width / [self.buttonTitles count];
+    CGFloat buttonWidth = container.bounds.size.width / [self.buttonItems count];
 
-    for (NSInteger i=0; i<[self.buttonTitles count]; i++) {
+    for (NSInteger i=0; i<[self.buttonItems count]; i++) {
 
         UIButton *closeButton = [UIButton buttonWithType:UIButtonTypeCustom];
 
@@ -214,10 +214,16 @@ CGFloat buttonSpacerHeight = 0;
         [closeButton addTarget:self action:@selector(buttonDidPressed:) forControlEvents:UIControlEventTouchUpInside];
         [closeButton setTag:i];
 
-        [closeButton setTitle:[self.buttonTitles objectAtIndex:i] forState:UIControlStateNormal];
-        [closeButton setTitleColor:[UIColor colorWithRed:0.0f green:0.5f blue:1.0f alpha:1.0f] forState:UIControlStateNormal];
-        [closeButton setTitleColor:[UIColor colorWithRed:0.2f green:0.2f blue:0.2f alpha:0.5f] forState:UIControlStateHighlighted];
-        [closeButton.titleLabel setFont:[UIFont boldSystemFontOfSize:14.0f]];
+        WGAlertViewButtonItem *alertViewButtonItem = [self.buttonItems objectAtIndex:i];
+        
+        [closeButton setTitle:[alertViewButtonItem titleForState:UIControlStateNormal] forState:UIControlStateNormal];
+        [closeButton setTitle:[alertViewButtonItem titleForState:UIControlStateHighlighted] forState:UIControlStateHighlighted];
+        
+        [closeButton setTitleColor:[alertViewButtonItem titleColorForState:UIControlStateNormal] forState:UIControlStateNormal];
+        [closeButton setTitleColor:[alertViewButtonItem titleColorForState:UIControlStateHighlighted] forState:UIControlStateHighlighted];
+        
+        [closeButton.titleLabel setFont:alertViewButtonItem.titleFont];
+        
         [closeButton.layer setCornerRadius:kCustomIOSAlertViewCornerRadius];
 
         [container addSubview:closeButton];
@@ -243,7 +249,7 @@ CGFloat buttonSpacerHeight = 0;
 // Helper function: count and return the screen's size
 - (CGSize)countScreenSize
 {
-    if (self.buttonTitles!=NULL && [self.buttonTitles count] > 0) {
+    if (self.buttonItems!=NULL && [self.buttonItems count] > 0) {
         buttonHeight       = kCustomIOSAlertViewDefaultButtonHeight;
         buttonSpacerHeight = kCustomIOSAlertViewDefaultButtonSpacerHeight;
     } else {

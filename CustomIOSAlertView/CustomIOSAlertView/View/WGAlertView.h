@@ -10,13 +10,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WGAlertViewButtonItem.h"
 
 @interface WGAlertView : UIView
 
 @property (nonatomic, strong) UIView *dialogView;    // Dialog's container view
 @property (nonatomic, strong) UIView *containerView; // Container within the dialog (place your ui elements here)
 
-@property (nonatomic, strong) NSArray *buttonTitles;
+@property (nonatomic, strong) NSArray *buttonItems;
 @property (nonatomic, assign) BOOL useMotionEffects;
 
 @property (nonatomic, copy) void (^buttonTouchUpInsideBlock)(WGAlertView *alertView, NSInteger buttonIndex) ;

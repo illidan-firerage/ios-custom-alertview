@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		130C16741B9E74930092985B /* WGAlertViewButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 130C16731B9E74930092985B /* WGAlertViewButtonItem.m */; };
 		5EB26CCB17EC5EEB00F0971C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EB26CCA17EC5EEB00F0971C /* Foundation.framework */; };
 		5EB26CCD17EC5EEB00F0971C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EB26CCC17EC5EEB00F0971C /* CoreGraphics.framework */; };
 		5EB26CCF17EC5EEB00F0971C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EB26CCE17EC5EEB00F0971C /* UIKit.framework */; };
@@ -21,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		130C16721B9E74930092985B /* WGAlertViewButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGAlertViewButtonItem.h; sourceTree = "<group>"; };
+		130C16731B9E74930092985B /* WGAlertViewButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGAlertViewButtonItem.m; sourceTree = "<group>"; };
 		5EB26CC717EC5EEA00F0971C /* CustomIOSAlertView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomIOSAlertView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EB26CCA17EC5EEB00F0971C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5EB26CCC17EC5EEB00F0971C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -113,6 +116,8 @@
 			children = (
 				5EE9A9B917EC68960031B75E /* WGAlertView.h */,
 				5EE9A9BA17EC68960031B75E /* WGAlertView.m */,
+				130C16721B9E74930092985B /* WGAlertViewButtonItem.h */,
+				130C16731B9E74930092985B /* WGAlertViewButtonItem.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -195,6 +200,7 @@
 				5EB26CE417EC5EEB00F0971C /* ViewController.m in Sources */,
 				5EB26CDB17EC5EEB00F0971C /* AppDelegate.m in Sources */,
 				5EB26CD717EC5EEB00F0971C /* main.m in Sources */,
+				130C16741B9E74930092985B /* WGAlertViewButtonItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

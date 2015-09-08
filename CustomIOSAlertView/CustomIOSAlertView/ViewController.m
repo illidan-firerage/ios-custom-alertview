@@ -48,7 +48,10 @@
     [alertView setContainerView:[self createDemoView]];
 
     // Modify the parameters
-    [alertView setButtonTitles:[NSMutableArray arrayWithObjects:@"Close1", @"Close2", @"Close3", nil]];
+    alertView.buttonItems = @[[WGAlertViewButtonItem buttonItemWithNormalTitle:@"Close1" normalTitleColor:[UIColor blackColor]],
+                              [WGAlertViewButtonItem buttonItemWithNormalTitle:@"Close2" normalTitleColor:[UIColor blackColor]],
+                                [WGAlertViewButtonItem buttonItemWithNormalTitle:@"Close3" normalTitleColor:[UIColor blueColor]]
+                              ];
     
     // You may use a Block.
     [alertView setButtonTouchUpInsideBlock:^(WGAlertView *alertView, NSInteger buttonIndex) {
