@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 
-  s.name         = "CustomIOSAlertView"
+  s.name         = "WGAlertView"
   s.version      = "0.9.3"
   s.summary      = "Custom UIAlertView. Continue adding images and UIViews to dialogs on iOS7 and iOS8 as well."
 
@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
                    or other resources are needed.
                    DESC
 
-  s.homepage     = "https://github.com/wimagguc/ios-custom-alertview"
+  s.homepage     = "https://github.com/illidan-firerage/ios-custom-alertview"
   s.screenshots  = "https://github.com/wimagguc/ios-custom-alertview/raw/master/Docs/screen.png"
 
   s.license      = { :type => "MIT", :file => "LICENSE.md" }
@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios
 
-  s.source       = { :git => "https://github.com/wimagguc/ios-custom-alertview.git", :tag => "0.9.3" }
+  s.source       = { :git => "https://github.com/illidan-firerage/ios-custom-alertview.git", :commit => "68057ef8925ae46fea6a94afebe53ab2f17fe07b" }
 
   s.source_files  = "CustomIOSAlertView/CustomIOSAlertView/View/**/*.{h,m}"
 
